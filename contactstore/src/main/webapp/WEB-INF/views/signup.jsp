@@ -3,7 +3,7 @@
 
 		<div class="card-group col-md-12 ">
 			<div class="card shadow col-md-8 text-white">
-				<div class=" card-body bg-info card-img-left">
+				<div class=" card-body bg-dark card-img-left">
 					<!-- Background image for card set in CSS! -->
 				</div>
 			</div>

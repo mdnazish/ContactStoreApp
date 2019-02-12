@@ -24,11 +24,25 @@
 
 <title>Contact Store - ${title}</title>
 
+<script>
+	window.menu = '${title}';
+	
+	/* window.contextRoot = '${contextRoot}'; */
+</script>
+
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/contact-store.css" rel="stylesheet">
+
+<!-- Theme - Business Tycon -->
+<link href="${css}/bootstrap4-business-tycoon.css" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link href="${css}/font-awesome-5.7.1.css" rel="stylesheet">
+
+
 
 </head>
 

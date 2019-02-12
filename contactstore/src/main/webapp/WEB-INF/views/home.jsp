@@ -1,7 +1,7 @@
-<header class="bg-primary text-white">
-	<div class="container text-center">
-		<h1>Welcome to Scrolling Nav</h1>
-		<p class="lead">A landing page template freshly redesigned for
+<header class="bg-dark text-white">
+	<div class="container">
+		<h1 class="display-3 mb-5 text-light">Contact Management Application</h1>
+		<p class="lead mb-5 text-center">A landing page template freshly redesigned for
 			Bootstrap 4</p>
 	</div>
 </header>

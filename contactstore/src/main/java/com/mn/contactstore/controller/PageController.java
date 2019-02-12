@@ -31,7 +31,7 @@ public class PageController {
 	@RequestMapping("/signup")
 	public ModelAndView register() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Sing Up");
+		mv.addObject("title", "Sign Up");
 		mv.addObject("userClickRegister", true);
 		return mv;
 	}
