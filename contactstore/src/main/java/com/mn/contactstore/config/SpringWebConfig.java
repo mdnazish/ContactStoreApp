@@ -22,8 +22,9 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO Auto-generated method stub
+		
 		// super.addResourceHandlers(registry);
+		registry.addResourceHandler("/resources/**").addResourceLocations("/assets/");
 	}
 
 	@Bean

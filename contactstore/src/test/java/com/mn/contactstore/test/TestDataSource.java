@@ -1,4 +1,4 @@
-package contactstore;
+package com.mn.contactstore.test;
 
 import javax.sql.DataSource;
 

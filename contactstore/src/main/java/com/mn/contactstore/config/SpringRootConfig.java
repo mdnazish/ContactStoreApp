@@ -11,7 +11,9 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-//@ComponentScan(basePackages = "com.mn.contactstore")
+//@ComponentScan(basePackages = {"com.mn.contactstore.dao","com.mn.contactstore.service"})
+@ComponentScan(basePackages = "com.mn.contactstore")
+
 public class SpringRootConfig {
 	// TODO : Services, DAO, DataSources, Email Sender & other business layer beans
 

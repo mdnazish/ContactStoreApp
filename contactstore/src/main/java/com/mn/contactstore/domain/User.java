@@ -8,15 +8,15 @@ public class User {
 
 	// private fields
 
-	private int userId;
+	private Integer userId;
 	private String name;
 	private String phone;
 	private String email;
 	private String address;
 	private String loginName;
 	private String password;
-	private int role;
-	private int loginStatus;
+	private Integer role;
+	private Integer loginStatus;
 
 	// Default Constructor
 	public User() {
@@ -25,11 +25,11 @@ public class User {
 
 	// getters and setters
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -81,19 +81,19 @@ public class User {
 		this.password = password;
 	}
 
-	public int getRole() {
+	public Integer getRole() {
 		return role;
 	}
 
-	public void setRole(int role) {
+	public void setRole(Integer role) {
 		this.role = role;
 	}
 
-	public int getLoginStatus() {
+	public Integer getLoginStatus() {
 		return loginStatus;
 	}
 
-	public void setLoginStatus(int loginStatus) {
+	public void setLoginStatus(Integer loginStatus) {
 		this.loginStatus = loginStatus;
 	}
 

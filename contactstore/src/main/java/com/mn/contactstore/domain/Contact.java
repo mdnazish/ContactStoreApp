@@ -8,8 +8,8 @@ public class Contact {
 
 	// private fields
 
-	private int contactId;
-	private int userId;
+	private Integer contactId;
+	private Integer userId;
 	private String name;
 	private String phone;
 	private String email;
@@ -23,19 +23,19 @@ public class Contact {
 
 	// getters and setters
 
-	public int getContactId() {
+	public Integer getContactId() {
 		return contactId;
 	}
 
-	public void setContactId(int contactId) {
+	public void setContactId(Integer contactId) {
 		this.contactId = contactId;
 	}
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
