@@ -1,0 +1,46 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+body {
+	padding-top: 56px;
+	height: 100%;
+}
+
+.card {
+	height: auto;
+}
+/* Custom Styling for scrolling nav*/
+header {
+	padding: 156px 0 100px;
+}
+
+section {
+	padding: 150px 0;
+}
+
+/* Custom Styling - To fix footer problem*/
+html {
+	height: 100%;
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	height: 100px;
+	width: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.content {
+	padding-bottom: 150px;
+}
+
+.row {
+	padding: 5px;
+}
