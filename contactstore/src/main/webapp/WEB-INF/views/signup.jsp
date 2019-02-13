@@ -1,60 +1,61 @@
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <div class="container-fluid">
 	<div class="row my-4">
 
 		<div class="card-group col-md-12 ">
-			<div class="card shadow col-md-8 text-white">
+			<div class="card shadow col-md-7 text-white">
 				<div class=" card-body bg-dark card-img-left">
 					<!-- Background image for card set in CSS! -->
 				</div>
 			</div>
-			<div class="card shadow col-md-4">
+			<div class="card shadow col-md-5">
 				<div class="card-body">
-					<a href="${contextRoot}/login" class="float-right btn btn-outline-primary mt-1">Log
-						in</a>
+					<a href="${contextRoot}/login"
+						class="float-right btn btn-outline-primary mt-1">Log in</a>
 					<h4 class="card-title mt-2">Sign up</h4>
-					<form>
-						<div class="form-row">
-							<div class="col form-group">
-								<label>First name </label> <input type="text"
-									class="form-control" placeholder="">
+					<hr>
+					<!-- Spring Form Element -->
+					<sf:form action="${contextRoot}/register"
+						modelAttribute="userCommand" method="POST">
+						<div class=" form-group row">
+							<label class="col-form-label col-sm-3">Name </label>
+							<div class="col-sm-9">
+								<sf:input type="text" path="user.name" class="form-control" />
 							</div>
-							<!-- form-group end.// -->
-							<div class="col form-group">
-								<label>Last name</label> <input type="text" class="form-control"
-									placeholder=" ">
+						</div>
+						<div class=" form-group row">
+							<label class="col-form-label col-sm-3">Phone </label>
+							<div class="col-sm-9">
+								<sf:input type="text" path="user.phone" class="form-control" />
 							</div>
-							<!-- form-group end.// -->
 						</div>
-						<!-- form-row end.// -->
-						<div class="form-group">
-							<label>Email</label> <input type="email" class="form-control"
-								placeholder="">
-						</div>
-						<!-- form-group end.// -->
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Address</label> <input type="text" class="form-control">
+						<div class="form-group row">
+							<label class="col-form-label col-sm-3">Email </label>
+							<div class="col-sm-9">
+								<sf:input type="email" path="user.email" class="form-control"
+									placeholder="abc@xyz.com" />
 							</div>
-							<!-- form-group end.// -->
-							<div class="form-group col-md-6">
-								<label>Country</label> <select id="inputState"
-									class="form-control">
-									<option>Choose...</option>
-									<option>Uzbekistan</option>
-									<option>Russia</option>
-									<option selected="">India</option>
-									<option>United State</option>
-									<option>Afganistan</option>
-								</select>
+						</div>
+						<div class=" form-group row">
+							<label class="col-form-label col-sm-3">Address </label>
+							<div class="col-sm-9">
+								<sf:textarea path="user.address" class="form-control" />
 							</div>
-							<!-- form-group end.// -->
 						</div>
-						<!-- form-row.// -->
-						<div class="form-group">
-							<label>Create password</label> <input class="form-control"
-								type="password">
+						<div class=" form-group row">
+							<label class="col-form-label col-sm-3">Login Name </label>
+							<div class="col-sm-9">
+								<sf:input type="text" path="user.loginName" class="form-control"
+									placeholder="Enter your login username" />
+							</div>
 						</div>
-						<!-- form-group end.// -->
+						<div class=" form-group row">
+							<label class="col-form-label col-sm-3">Password </label>
+							<div class="col-sm-9">
+								<sf:input type="password" path="user.password"
+									class="form-control" placeholder="************" />
+							</div>
+						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-block">
 								Register</button>
@@ -64,11 +65,13 @@
 							button, you confirm that you accept our <br> Terms of use
 							and Privacy Policy.
 						</small>
-					</form>
+					</sf:form>
 				</div>
 				<!-- card-body end .// -->
-				<div class="border-top card-footer text-center">Have an account? <a href="${contextRoot}/login">Log In</a></div>
-				
+				<div class="card-footer text-center">
+					Have an account? <a href="${contextRoot}/login">Log In</a>
+				</div>
+
 			</div>
 			<!-- card.// -->
 		</div>

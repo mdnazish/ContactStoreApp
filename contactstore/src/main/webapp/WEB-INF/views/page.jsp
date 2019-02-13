@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sf" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}">
 </c:set>
-<sf:url var="css" value="/resources/css" />
-<sf:url var="js" value="/resources/js" />
-<sf:url var="images" value="/resources/images" />
-<sf:url var="jquery" value="/resources/jquery" />
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
+<spring:url var="jquery" value="/resources/jquery" />
 
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
 
 <script>
 	window.menu = '${title}';
-	
+
 	/* window.contextRoot = '${contextRoot}'; */
 </script>
 
@@ -51,24 +51,29 @@
 	<div class="wrapper">
 		<!-- Navigation -->
 		<%@include file="./shared/navbar.jsp"%>
+
+		<!-- Page Contect | Main Content -->
 		<div class="content">
-			<!-- Page Contect | Main Content -->
-			
 			<!-- Load only when user click on Home -->
 			<c:if test="${userClickHome == true }">
 				<%@include file="home.jsp"%>
 			</c:if>
 
-			<!-- Load only when user click on Login -->
-			<c:if test="${userClickLogin == true }">
-				<%@include file="login.jsp"%>
-			</c:if>
-			
 			<!-- Load only when user click on Register -->
 			<c:if test="${userClickRegister == true }">
 				<%@include file="signup.jsp"%>
 			</c:if>
 			
+			<!-- Load only when logged in as admin -->
+			<c:if test="${adminLoggedin == true }">
+				<%@include file="dashboard_admin.jsp"%>
+			</c:if>
+			
+			<!-- Load only when logged in as user -->
+			<c:if test="${userLoggedin == true }">
+				<%@include file="dashboard_user.jsp"%>
+			</c:if>
+
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>

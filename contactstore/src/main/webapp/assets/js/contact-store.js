@@ -13,6 +13,17 @@ $(function() {
 	}
 });
 
+// dismissing the alert after 3 seconds of form submission
+var $alert = $('.alert');
+
+if ($alert.length) {
+	setTimeout(function() {
+
+		$alert.fadeOut('slow');
+
+	}, 4000);
+}
+
 // to make Scrolling Navbar for landing page
 (function($) {
 	"use strict"; // Start of use strict
