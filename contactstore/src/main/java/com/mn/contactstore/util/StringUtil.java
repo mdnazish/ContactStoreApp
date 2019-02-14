@@ -13,8 +13,7 @@ public class StringUtil {
 		for (Object item : items) {
 			sb.append(item).append(",");
 		}
-		// Recommanded : here we have to delete last comma of the items to execute SQL
-		// Query properly.
+		// Recommanded : here we have to delete last comma of the items to execute SQL Query properly.
 		if (sb.length() > 0) {
 			sb.deleteCharAt(sb.length() - 1);
 		}

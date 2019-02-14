@@ -13,7 +13,7 @@ $(function() {
 	}
 });
 
-// dismissing the alert after 3 seconds of form submission
+// dismissing the alert after 7 seconds of form submission
 var $alert = $('.alert');
 
 if ($alert.length) {
@@ -21,7 +21,7 @@ if ($alert.length) {
 
 		$alert.fadeOut('slow');
 
-	}, 4000);
+	}, 7000); // wait for 7 sec
 }
 
 // to make Scrolling Navbar for landing page

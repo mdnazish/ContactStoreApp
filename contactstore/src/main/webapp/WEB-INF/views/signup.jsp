@@ -1,7 +1,18 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <div class="container-fluid">
+	<!-- This will be displayed if Login username is Wrong -->
+	<!-- Case 1: using 'error' attribute which is added in Model object of Spring f/w-->
+	<c:if test="${not empty error}">
+		<div class="row my-4">
+			<div class="col-md-12">
+				<div class="alert alert-danger text-center">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>
+						${error} </strong>
+				</div>
+			</div>
+		</div>
+	</c:if>
 	<div class="row my-4">
-
 		<div class="card-group col-md-12 ">
 			<div class="card shadow col-md-7 text-white">
 				<div class=" card-body bg-dark card-img-left">

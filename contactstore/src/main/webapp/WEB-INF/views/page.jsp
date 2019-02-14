@@ -63,17 +63,16 @@
 			<c:if test="${userClickRegister == true }">
 				<%@include file="signup.jsp"%>
 			</c:if>
-			
+
 			<!-- Load only when logged in as admin -->
 			<c:if test="${adminLoggedin == true }">
 				<%@include file="dashboard_admin.jsp"%>
 			</c:if>
-			
+
 			<!-- Load only when logged in as user -->
 			<c:if test="${userLoggedin == true }">
 				<%@include file="dashboard_user.jsp"%>
 			</c:if>
-
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
