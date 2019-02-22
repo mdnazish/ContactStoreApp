@@ -7,6 +7,12 @@ $(function() {
 	case 'Sign Up':
 		$('.register').addClass('active');
 		break;
+	case 'Add Contact':
+		$('.addContact').addClass('active');
+		break;
+	case 'Contact List':
+		$('.contactList').addClass('active');
+		break;
 	default:
 		$('.home').addClass('active');
 		break;
@@ -23,6 +29,22 @@ if ($alert.length) {
 
 	}, 7000); // wait for 7 sec
 }
+
+// call dataTable Plugin
+/*
+ * $(document).ready(function() { $('#contactTable').DataTable(); });
+ */
+/*var $table = $('#contactTable');
+
+// execute the below code only where we have this table
+if ($table.length) {
+	$table.DataTable({
+		// data:products
+		lengthMenu : [ [ 3, 5, 10, -1 ],
+				[ '3 Records', '5 Records', '10 Records', 'ALL' ] ],
+		pageLength : 5
+	});
+}*/
 
 // to make Scrolling Navbar for landing page
 (function($) {

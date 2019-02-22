@@ -14,6 +14,8 @@ public interface ContactService {
     public boolean delete(int contactId);
     public boolean deleteAll(Integer[] contactIds);
     
+    public Contact findContactById(Integer contactId);
+    
      //This method returns all User Contact (User who is logged in). 
     public List<Contact> findUserContact(int userId);
     

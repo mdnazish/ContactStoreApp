@@ -39,10 +39,11 @@
 <!-- Theme - Business Tycon -->
 <link href="${css}/bootstrap4-business-tycoon.css" rel="stylesheet">
 
+<!-- Plugin - DataTable -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
 <!-- Font Awesome Icons -->
 <link href="${css}/font-awesome-5.7.1.css" rel="stylesheet">
-
-
 
 </head>
 
@@ -59,9 +60,24 @@
 				<%@include file="home.jsp"%>
 			</c:if>
 
+			<!-- Load only when user click on Login -->
+			<c:if test="${userClickLogin == true }">
+				<%@include file="login.jsp"%>
+			</c:if>
+
 			<!-- Load only when user click on Register -->
 			<c:if test="${userClickRegister == true }">
 				<%@include file="signup.jsp"%>
+			</c:if>
+			
+			<!-- Load only when user click on Add Contact -->
+			<c:if test="${userClickAddContact == true }">
+				<%@include file="addContact.jsp"%>
+			</c:if>
+			
+			<!-- Load only when user click on Contact List -->
+			<c:if test="${userClickContactList == true }">
+				<%@include file="contactList.jsp"%>
 			</c:if>
 
 			<!-- Load only when logged in as admin -->
@@ -78,11 +94,15 @@
 		<%@include file="./shared/footer.jsp"%>
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="${jquery}/jquery.min.js"></script>
+		<script src="${jquery}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
 		<!-- Plugin JavaScript -->
 		<script src="${jquery}/jquery.easing.min.js"></script>
+		
+		<!-- Plugin - DataTables -->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
+		<script src="${js}/jquery.dataTables.js"></script>
 
 		<!-- Custom JavaScript for this theme -->
 		<script src="${js}/contact-store.js"></script>
