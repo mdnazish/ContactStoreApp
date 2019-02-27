@@ -79,6 +79,11 @@
 			<c:if test="${userClickContactList == true }">
 				<%@include file="contactList.jsp"%>
 			</c:if>
+			
+			<!-- Load only when admin click on User List -->
+			<c:if test="${adminClickUserList == true }">
+				<%@include file="userList.jsp"%>
+			</c:if>
 
 			<!-- Load only when logged in as admin -->
 			<c:if test="${adminLoggedin == true }">

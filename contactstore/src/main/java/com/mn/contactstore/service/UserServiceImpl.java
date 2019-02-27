@@ -54,10 +54,10 @@ public class UserServiceImpl extends AbstractBaseDao implements UserService {
 		}
 	}
 
+	// it will return all the user whose role is 1
 	@Override
 	public List<User> getUserList() {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.findByProperty("role", UserService.ROLE_USER);
 	}
 
 	@Override

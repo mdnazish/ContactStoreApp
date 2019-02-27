@@ -35,16 +35,17 @@ public class ContactController {
 	}
 
 	@RequestMapping("/save")
-	public String saveOrUpdateContact(@ModelAttribute("contactCommand") Contact contact, Model model, HttpSession session) {
-		
+	public String saveOrUpdateContact(@ModelAttribute("contactCommand") Contact contact, Model model,
+			HttpSession session) {
+
 		Integer contactId = (Integer) session.getAttribute("attrContactId");
-		
+
 		// To Save a contact
-		if(contactId == null) {
+		if (contactId == null) {
 			try {
 				Integer userId = (Integer) session.getAttribute("userId");
 				contact.setUserId(userId);// FK : from logged in userId
-				
+
 				contactService.save(contact);
 
 				return "redirect:contact/list?action=save"; // contacList Page
@@ -56,10 +57,10 @@ public class ContactController {
 				model.addAttribute("userClickAddContact", true); // checking condition in Master Page (page.jsp)
 				return "page"; // addContact Page
 			}
-		}else {
+		} else {
 			// To update an existing contact
 			try {
-				contact.setContactId(contactId); //PK
+				contact.setContactId(contactId); // PK
 				// update contact
 				contactService.update(contact);
 
@@ -73,20 +74,19 @@ public class ContactController {
 				return "page"; // addContact Page
 			}
 		}
-		
 
 	}
-	
+
 	@RequestMapping("/contact/{contactId}/edit")
 	public String editContact(@PathVariable Integer contactId, Model model, HttpSession session) {
 
 		// set session attribute for currect logged in user
 		// and to user for update re-filled data by calling saveOrUpdate(-,-,-) method
 		session.setAttribute("attrContactId", contactId);
-		
+
 		// fetch contact
 		Contact contact = contactService.findContactById(contactId);
-		
+
 		// call add Contact form with pre-filled values
 		model.addAttribute("contactCommand", contact);
 
@@ -98,7 +98,7 @@ public class ContactController {
 	}
 
 	@RequestMapping("/contact/delete")
-	public String deleteContact(@RequestParam("cid") Integer contactId, Model model) {
+	public String deleteContact(@RequestParam("cid") Integer contactId) {
 
 		// delete contact by contactId
 		contactService.delete(contactId);
@@ -107,6 +107,18 @@ public class ContactController {
 		return "redirect:list?action=delete"; // contactList page
 	}
 	
+	@RequestMapping("/contact/deleteAll")
+	public String deleteSelected(@RequestParam("cid") Integer[] contactIds) {
+
+		// delete contact by contactId
+		contactService.deleteAll(contactIds);
+
+		// redirect to contactList Page with action=message
+		return "redirect:list?action=deletd "+contactIds.length; // contactList page
+	}
+
+
+	// Search all contacts associated with current user.
 	@RequestMapping("/contact/list")
 	public String contactList(Model model, HttpSession session) {
 
@@ -114,6 +126,21 @@ public class ContactController {
 
 		// adding all contacts associated with logged in user by its userId
 		model.addAttribute("contacts", contactService.findUserContact(userId));
+
+		model.addAttribute("title", "Contact List");
+		model.addAttribute("userClickContactList", true); // chcking condition is Master Page (page.jsp)
+
+		return "page"; // contactList page
+	}
+
+	// Search contacts by passing freeText as inpupt & Press "Find" button
+	@RequestMapping("/contact/search")
+	public String searchContact(@RequestParam("freeText") String freeText, Model model, HttpSession session) {
+
+		Integer userId = (Integer) session.getAttribute("userId");
+
+		// adding all contacts associated with logged in user by its userId
+		model.addAttribute("contacts", contactService.serchUserContact(userId, freeText));
 
 		model.addAttribute("title", "Contact List");
 		model.addAttribute("userClickContactList", true); // chcking condition is Master Page (page.jsp)

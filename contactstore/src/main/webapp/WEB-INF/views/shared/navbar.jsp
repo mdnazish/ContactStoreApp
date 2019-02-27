@@ -51,7 +51,7 @@
 			<div class="collapse navbar-collapse " id="navbarResponsive">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item userList"><a
-						class="nav-link" href="${contextRoot}/user/list">User List</a></li>
+						class="nav-link" href="${contextRoot}/admin/user/list">User List</a></li>
 				</ul>
 				<ul class="navbar-nav navbar-right">
 					<li class="nav-item dropdown no-arrow"><a

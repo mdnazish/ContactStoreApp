@@ -13,6 +13,9 @@ $(function() {
 	case 'Contact List':
 		$('.contactList').addClass('active');
 		break;
+	case 'User List':
+		$('.userList').addClass('active');
+		break;
 	default:
 		$('.home').addClass('active');
 		break;

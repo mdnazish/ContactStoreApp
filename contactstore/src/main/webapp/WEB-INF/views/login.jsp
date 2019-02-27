@@ -41,12 +41,14 @@
 	<div class="row my-4">
 		<div class="card-group col-md-12">
 			<div class="card shadow col-md-8 ">
-				<div class="card-body bg-dark card-img-left">
-				<!-- background image here -->
+				<div class="card-body card-img-left">
+					<!-- background image here -->
+					<img alt="" src="${images}/login_page.jpg"
+						style="width: 100%; height: 100%;">
 				</div>
 			</div>
 			<div class="card shadow col-md-4">
-				<div class="card-body" >
+				<div class="card-body">
 					<a href="${contextRoot}/signup"
 						class="float-right btn btn-outline-primary">Sign up</a>
 					<h4 class="card-title mb-4 mt-2">Sign in</h4>

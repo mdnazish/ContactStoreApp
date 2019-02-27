@@ -25,6 +25,34 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	/**
+	 * the method is handling user registeration functionality 1. showing the error
+	 * message related to registeration failed 2. showing login page after sucessful
+	 * registeration
+	 * 
+	 * @param userCommand
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/register")
+	public String registerUser(@ModelAttribute("userCommand") UserCommand userCommand, Model model) {
+		try {
+			User user = userCommand.getUser();
+			user.setRole(UserService.ROLE_USER);
+			user.setLoginStatus(UserService.LOGIN_STATUS_ACTIVE);
+			userService.register(user);
+
+			return "redirect:login?action=register"; // Login Page
+		} catch (DuplicateKeyException e) {
+			e.printStackTrace();
+			model.addAttribute("error", "Login Name is already exist! Please enter another login username.");
+			model.addAttribute("title", "Sign Up");
+			model.addAttribute("userClickRegister", true); // checking condition in Master Page (page.jsp)
+			return "page"; // SignUp Page
+		}
+
+	}
 
 	// adding user in session
 	private void addUserInSeesion(User user, HttpSession session) {
@@ -94,32 +122,13 @@ public class UserController {
 		session.invalidate();
 		return "redirect:login?action=logout";
 	}
-
-	/**
-	 * the method is handling user registeration functionality 1. showing the error
-	 * message related to registeration failed 2. showing login page after sucessful
-	 * registeration
-	 * 
-	 * @param userCommand
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping("/register")
-	public String registerUser(@ModelAttribute("userCommand") UserCommand userCommand, Model model) {
-		try {
-			User user = userCommand.getUser();
-			user.setRole(UserService.ROLE_USER);
-			user.setLoginStatus(UserService.LOGIN_STATUS_ACTIVE);
-			userService.register(user);
-
-			return "redirect:login?action=register"; // Login Page
-		} catch (DuplicateKeyException e) {
-			e.printStackTrace();
-			model.addAttribute("error", "Login Name is already exist! Please enter another login username.");
-			model.addAttribute("title", "Sign Up");
-			model.addAttribute("userClickRegister", true); // checking condition in Master Page (page.jsp)
-			return "page"; // SignUp Page
-		}
-
+	
+	// Show All Users present in DB
+	@RequestMapping("admin/user/list")
+	public String userList(Model model) {
+		model.addAttribute("users", userService.getUserList());
+		model.addAttribute("title", "User List");
+		model.addAttribute("adminClickUserList", true); // checking condition in Master Page (page.jsp)
+		return "page"; // userList Page
 	}
 }

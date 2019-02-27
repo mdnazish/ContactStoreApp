@@ -17,6 +17,8 @@
 			<div class="card shadow col-md-7 text-white">
 				<div class="card-body card-img-left">
 					<!-- place background image here -->
+					<img alt="" src="${images}/register.jpg"
+						style="width: 100%; height: 100%;">
 				</div>
 			</div>
 			<div class="card shadow col-md-5">

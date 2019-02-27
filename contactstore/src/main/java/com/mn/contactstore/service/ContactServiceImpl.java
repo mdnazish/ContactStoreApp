@@ -73,7 +73,7 @@ public class ContactServiceImpl extends AbstractBaseDao implements ContactServic
 	@Override
 	public List<Contact> serchUserContact(int userId, String txt) {
 		String sqlQuery = "SELECT contact_id, user_id, name, phone, email, address, remark FROM contact "
-				+ "WHERE userId=? " + "AND (name LIKE '%" + txt + "%' " + "OR address LIKE '%" + txt + "%' "
+				+ "WHERE user_id=? " + "AND (name LIKE '%" + txt + "%' " + "OR address LIKE '%" + txt + "%' "
 				+ "OR phone LIKE '%" + txt + "%' " + "OR email LIKE '%" + txt + "%' " + "OR " + "remark LIKE '%" + txt
 				+ "%')";
 		return getJdbcTemplate().query(sqlQuery, new ContactRowMapper(), userId);

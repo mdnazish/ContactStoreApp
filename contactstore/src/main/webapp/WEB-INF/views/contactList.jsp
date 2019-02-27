@@ -36,11 +36,18 @@
 
 <div class="container">
 	<div class="row my-4">
-
+		<form class="form-inline col-md-9"></form>
+		<!-- Search Functionality using freeText -->
+		<form class="form-inline has-search col-md-3"
+			action="${contextRoot}/user/contact/search">
+			<input type="text" class="form-control" name="freeText"
+				value="${param.freeText}" placeholder="Enter Text To Search">
+			<span class="fa fa-search form-control-feedback"></span>
+		</form>
+		<br> <br> <br>
+		<!-- Show All contacts associated with logged in user. -->
 		<!-- Responsive Data Table  -->
-
-		<table id="contactTable" class="table table-hover table-bordered"
-			cellspacing="0">
+		<table id="contactTable" class="table table-hover table-bordered">
 			<thead>
 				<tr>
 					<th style="width: 5%">#</th>
