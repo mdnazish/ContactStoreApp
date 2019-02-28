@@ -62,7 +62,13 @@ public class UserServiceImpl extends AbstractBaseDao implements UserService {
 
 	@Override
 	public void changeLoginStatus(Integer userId, Integer loginStatus) {
-		// TODO Auto-generated method stub
+		String sqlQuery = "UPDATE user SET login_status=:lstatus WHERE user_id=:uid";
+		
+		Map map = new HashMap();
+		map.put("uid", userId);
+		map.put("lstatus", loginStatus);
+		
+		getNamedParameterJdbcTemplate().update(sqlQuery, map);
 
 	}
 

@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mn.contactstore.command.LoginCommand;
 import com.mn.contactstore.command.UserCommand;
@@ -130,5 +132,23 @@ public class UserController {
 		model.addAttribute("title", "User List");
 		model.addAttribute("adminClickUserList", true); // checking condition in Master Page (page.jsp)
 		return "page"; // userList Page
+	}
+	
+	// admin can change user login status either 'active' or 'block'
+	@RequestMapping("admin/user/change_status")
+	@ResponseBody
+	public String changeUserLoginStatus(@RequestParam Integer userId, @RequestParam Integer loginStatus, Model model) {
+		try {
+		// call business method
+		userService.changeLoginStatus(userId, loginStatus);
+		
+		// return Message as data
+		return "SUCCESS: Status Changed.";
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+			// return Message as data
+			return "ERROR: Unable To Change Status.";
+		}
 	}
 }

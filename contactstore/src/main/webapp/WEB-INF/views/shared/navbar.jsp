@@ -14,20 +14,19 @@
 			<div class="collapse navbar-collapse " id="navbarResponsive">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item home"><a
-						class="nav-link js-scroll-trigger" href="${contextRoot}/home">Home
-							<span class="sr-only">(current)</span>
+						class="nav-link js-scroll-trigger" href="${contextRoot}/home"><i class="fa fa-home"></i> Home
 					</a></li>
 					<li class="nav-item aboutUs"><a
-						class="nav-link js-scroll-trigger" href="#about">About Us</a></li>
+						class="nav-link js-scroll-trigger" href="#about"><i class="fa fa-info-circle"> About Us</i></a></li>
 					<li class="nav-item contactUs"><a
-						class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+						class="nav-link js-scroll-trigger" href="#contact"><i class="far fa-building"> Contact Us</i></a>
 					</li>
 				</ul>
 				<ul class="navbar-nav navbar-right">
-					<li class="nav-item login"><a class="nav-link"
-						href="${contextRoot}/login">Login</a></li>
-					<li class="nav-item register"><a class="nav-link"
-						href="${contextRoot}/signup">Register</a></li>
+					<li class="nav-item login"><a class="nav-link btn btn-outline-dark"
+						href="${contextRoot}/login"><i class="fa fa-sign-in-alt"> Login</i></a></li>
+					<li class="nav-item register"><a class="nav-link btn btn-outline-danger"
+						href="${contextRoot}/signup"><i class="fa fa-registered">egister</i></a></li>
 				</ul>
 
 			</div>
@@ -51,21 +50,21 @@
 			<div class="collapse navbar-collapse " id="navbarResponsive">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item userList"><a
-						class="nav-link" href="${contextRoot}/admin/user/list">User List</a></li>
+						class="nav-link" href="${contextRoot}/admin/user/list"><i class="fa fa-users"> User List</i></a></li>
 				</ul>
 				<ul class="navbar-nav navbar-right">
 					<li class="nav-item dropdown no-arrow"><a
 						class="nav-link dropdown-toggle" href="#" id="userDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> <i class="fas fa-user-circle fa-fw">
+						aria-expanded="false"> <i class="fas fa-user-tie fa-fw">
 						</i> Admin
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="userDropdown">
-							<a class="dropdown-item" href="#">Profile</a>
+							<a class="dropdown-item" href="#"><i class="fa fa-user-edit"></i> Profile</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="${contextRoot}/logout"
-								data-toggle="modal" data-target="#logoutModal">Logout</a>
+								data-toggle="modal" data-target="#logoutModal"><i class="fa fa-sign-out-alt"> Logout</i></a>
 						</div></li>
 				</ul>
 			</div>
@@ -89,11 +88,11 @@
 			<div class="collapse navbar-collapse " id="navbarResponsive">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item addContact"><a
-						class="nav-link" href="${contextRoot}/user/add/contact">Add
-							Contact</a></li>
+						class="nav-link" href="${contextRoot}/user/add/contact"><i class="fa fa-address-book"> Add
+							Contact</i></a></li>
 					<li class="nav-item contactList"><a
-						class="nav-link" href="${contextRoot}/user/contact/list">Contact
-							List</a></li>
+						class="nav-link" href="${contextRoot}/user/contact/list"><i class="fa fa-address-card"> Contact
+							List</i></a></li>
 				</ul>
 				<ul class="navbar-nav navbar-right">
 					<li class="nav-item dropdown no-arrow"><a
@@ -104,10 +103,10 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="userDropdown">
-							<a class="dropdown-item" href="#">Profile</a>
+							<a class="dropdown-item" href="#"><i class="fa fa-user-edit"></i> Profile</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="${contextRoot}/logout"
-								data-toggle="modal" data-target="#logoutModal">Logout</a>
+								data-toggle="modal" data-target="#logoutModal"><i class="fa fa-sign-out-alt"> Logout</i></a>
 						</div></li>
 				</ul>
 			</div>

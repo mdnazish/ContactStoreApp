@@ -45,6 +45,9 @@
 <!-- Font Awesome Icons -->
 <link href="${css}/font-awesome-5.7.1.css" rel="stylesheet">
 
+<!-- Core JavaScript -->
+<script src="${jquery}/jquery.js"></script>
+
 </head>
 
 <body id="page-top">
