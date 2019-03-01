@@ -12,6 +12,21 @@
 			</div>
 		</div>
 	</c:if>
+	<!-- AJAX call to check login name availability -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#check_available').click(function(){
+				$.ajax({
+					url:'check_available',
+					data: {username:$('#id_username').val()},
+					success: function(data){
+						$('#id_response').html(data);
+					}
+				});
+			});
+		});
+		
+	</script>
 	<div class="row my-4">
 		<div class="card-group col-md-12 ">
 			<div class="card shadow col-md-7 text-white">
@@ -58,8 +73,12 @@
 						<div class=" form-group row">
 							<label class="col-form-label col-sm-3">Login Name </label>
 							<div class="col-sm-9">
-								<sf:input type="text" path="user.loginName" class="form-control"
+								<sf:input id="id_username" type="text" path="user.loginName" class="form-control"
 									placeholder="Enter your login username" />
+									<span id="id_response" class="mt-1 text-info"></span>
+									<button id="check_available" type="button" class="float-right btn btn-sm btn-outline-dark mt-1 fa fa-user-check"> 
+									   Check Availablity
+									</button>
 							</div>
 						</div>
 						<div class=" form-group row">

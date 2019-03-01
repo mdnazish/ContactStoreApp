@@ -137,7 +137,7 @@ public class UserController {
 	// admin can change user login status either 'active' or 'block'
 	@RequestMapping("admin/user/change_status")
 	@ResponseBody
-	public String changeUserLoginStatus(@RequestParam Integer userId, @RequestParam Integer loginStatus, Model model) {
+	public String changeUserLoginStatus(@RequestParam Integer userId, @RequestParam Integer loginStatus) {
 		try {
 		// call business method
 		userService.changeLoginStatus(userId, loginStatus);
@@ -151,4 +151,21 @@ public class UserController {
 			return "ERROR: Unable To Change Status.";
 		}
 	}
+	
+	// AJAX call will pass here and check login name available or not
+		@RequestMapping("/check_available")
+		@ResponseBody
+		public String checkAvailability(@RequestParam String  username) {
+			
+			// call business method
+			if(userService.isUsernameExist(username)) {
+				// return Message as data
+				return "Already Registered!";
+			}else {
+				// return Message as data
+				return " Yes! Available.";
+			}
+			
+			
+		}
 }

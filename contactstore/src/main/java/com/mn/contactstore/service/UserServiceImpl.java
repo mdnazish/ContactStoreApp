@@ -63,13 +63,24 @@ public class UserServiceImpl extends AbstractBaseDao implements UserService {
 	@Override
 	public void changeLoginStatus(Integer userId, Integer loginStatus) {
 		String sqlQuery = "UPDATE user SET login_status=:lstatus WHERE user_id=:uid";
-		
+
 		Map map = new HashMap();
 		map.put("uid", userId);
 		map.put("lstatus", loginStatus);
-		
+
 		getNamedParameterJdbcTemplate().update(sqlQuery, map);
 
+	}
+
+	@Override
+	public Boolean isUsernameExist(String username) {
+		String sqlQuery = "SELECT count(login_name) FROM user WHERE login_name=?";
+		Integer count = getJdbcTemplate().queryForObject(sqlQuery, new String[] { username }, Integer.class);
+		if (count == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
